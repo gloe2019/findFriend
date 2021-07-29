@@ -1,0 +1,26 @@
+{
+  "name": "findfriend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "findFriend.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gloe2019/findFriend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gloe2019/findFriend/issues"
+  },
+  "homepage": "https://github.com/gloe2019/findFriend#readme",
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "mocha": "^9.0.3"
+  }
+}
