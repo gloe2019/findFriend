@@ -11,7 +11,7 @@ describe("findFriend", () => {
     assert.deepEqual(input, expectedOutput);
   });
 
-  it('should return "Not Found" if the requested contact is not found', () => {
+  it('should return "Not found" if the requested contact is not found', () => {
     const data = [
       {
         name: "Barney",
@@ -26,13 +26,13 @@ describe("findFriend", () => {
         friends: ["Barney", "Trix"],
       },
     ];
-    const expectedOutput = "Not Found";
+    const expectedOutput = "Not found";
     const input = findFriend(data, "Bob", "email");
 
     assert.deepEqual(input, expectedOutput);
   });
 
-  it('should return "Not Found" if the requested field is not found', () => {
+  it('should return "Not found" if the requested field is not found', () => {
     const data = [
       {
         name: "Barney",
@@ -53,7 +53,7 @@ describe("findFriend", () => {
         friends: ["Henderson", "Barney", "Carter"],
       },
     ];
-    const expectedOutput = "Not Found";
+    const expectedOutput = "Not found";
     const input = findFriend(data, "Trix", "birthday");
 
     assert.deepEqual(input, expectedOutput);

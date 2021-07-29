@@ -56,7 +56,7 @@ const findFriend = (data, contactName, requiredField) => {
     }
   }
   if (found === false) {
-    return "Not Found";
+    return "Not found";
   }
 
   for (const obj of friendsToCheck) {
@@ -70,7 +70,7 @@ const findFriend = (data, contactName, requiredField) => {
       }
     }
   }
-  return "Not Found";
+  return "Not found";
 };
 const contactData = [
   {
