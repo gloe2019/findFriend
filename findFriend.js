@@ -52,9 +52,6 @@ const findFriend = (data, contactName, requiredField) => {
   for (const datum of data) {
     if (datum.name === contactName) {
       found = true;
-      console.log(`found: ${found}, ${contactName} exists in data`);
-      // console.log(datum);
-      console.log("============");
       friendsToCheck = datum.friends;
     }
   }
@@ -68,7 +65,7 @@ const findFriend = (data, contactName, requiredField) => {
       if (datum.name === obj && datum[requiredField]) {
         foundObj.name = datum.name;
         foundObj[requiredField] = datum[requiredField];
-        // console.log("yes");
+        console.log("Found:", datum.name, "✅");
         return foundObj;
       }
     }
