@@ -58,4 +58,31 @@ describe("findFriend", () => {
 
     assert.deepEqual(input, expectedOutput);
   });
+
+  it("should return name + required field of first friend match in data", () => {
+    const data = [
+      {
+        name: "Barney",
+        phone: "212 451 1288",
+        email: "barney@doesnotexist.com",
+        friends: ["Henderson", "Trix"],
+      },
+      {
+        name: "Carter",
+        phone: "947 469 5134",
+        email: "carter@cartyfarty.com",
+        friends: ["Barney", "Trix"],
+      },
+      {
+        name: "Trix",
+        phone: "123 524 7812",
+        email: "trix4kids@tricky.com",
+        friends: ["Henderson", "Barney", "Carter"],
+      },
+    ];
+    const expectedOutput = { name: "Barney", email: "barney@doesnotexist.com" };
+    const input = findFriend(data, "Trix", "email");
+
+    assert.deepEqual(input, expectedOutput);
+  });
 });
