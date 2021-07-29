@@ -40,5 +40,65 @@ const contacts = [
 // ex: findFriend(contacts, "Laurel", "email") ==> Object with Hardy's name and email adress.
 // If the contact requested/field requested is not found, return Not found
 //
+
 const findFriend = (data, contactName, requiredField) => {
- if};
+  if (data.length === 0 || Object.keys(data).length === 0) {
+    return "Invalid data";
+  }
+
+  let found = false;
+  let foundObj = {};
+  let friendsToCheck;
+  for (const datum of data) {
+    if (datum.name === contactName) {
+      found = true;
+      console.log(`found: ${found}, ${contactName} exists in data`);
+      // console.log(datum);
+      console.log("============");
+      friendsToCheck = datum.friends;
+    }
+  }
+  if (found === false) {
+    return "Not Found";
+  }
+
+  for (const obj of friendsToCheck) {
+    // console.log(obj);
+    for (const datum of data) {
+      if (datum.name === obj && datum[requiredField]) {
+        foundObj.name = datum.name;
+        foundObj[requiredField] = datum[requiredField];
+        // console.log("yes");
+        return foundObj;
+      }
+    }
+  }
+  return "Not Found";
+};
+const contactData = [
+  {
+    name: "Barney",
+    phone: "212 451 1288",
+    email: "barney@doesnotexist.com",
+    friends: ["Henderson", "Trix"],
+  },
+  {
+    name: "Carter",
+    phone: "947 469 5134",
+    email: "carter@cartyfarty.com",
+    friends: ["Barney", "Trix"],
+  },
+  {
+    name: "Trix",
+    phone: "123 524 7812",
+    email: "trix4kids@tricky.com",
+    friends: ["Henderson", "Barney", "Carter"],
+  },
+];
+console.log(findFriend(contactData, "Trix", "birthday"));
+console.log(findFriend(contacts, "Abbott", "phone"));
+console.log(findFriend(contacts, "Buster", "email"));
+console.log(findFriend(contacts, "Bob", "phone"));
+console.log(findFriend(contacts, "Costello", "birthday"));
+
+module.exports = findFriend;
